@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www/thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8"/>
+    <title>Recipe Home</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+          integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+            integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+            crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+          th:href="@{/webjars/bootstrap/3.3.7-1/css/bootstrap.min.css}">
+
+    <script src="/webjars/jquery/1.11.1/jquery.min.js"></script>
+    <!-- Latest compiled and minified JavaScript -->
+
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+            th:src="@{/webjars/bootstrap/3.3.7-1/js/bootstrap.min.js}"></script>
+
+</head>
+<body>
+<div style="background-image: url('https://www.talview.com/hs-fs/hubfs/404-BG.png?width=1370&height=700&name=404-BG.png')"
+>
+
+    <div class="container page-size">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="error-template">
+                    <h1 class="header">
+                        Oops!</h1>
+                    <h2 class="sub-head">
+                        400 Error</h2>
+                    <div class="error-details" th:text="${exception.getMessage()}">
+                        Sorry, an error has occurred, Requested page not found!
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>>
+</body>
+<style >
+    /*body {*/
+    /*    background-image:url("../static/images/bg-404.png") }*/
+    .page-size{
+        height: 100vh;
+        vertical-align: middle;
+        display: grid;
+    }
+    .header{
+        font-size: 70px;
+    }
+    .sub-head{
+        font-size: 50px;
+    }
+    .error-details{
+        font-size: 25px;
+    }
+    .error-template {padding: 40px 15px;text-align: center;color: white;}
+    .error-actions {margin-top:15px;margin-bottom:15px;}
+    .error-actions .btn { margin-right:10px; }
+</style>
+</html>
