@@ -2,4 +2,4 @@
 
 [![codecov](https://codecov.io/gh/Bhupendrapt5/spring5-mongo-recipeApp/branch/master/graph/badge.svg)](https://codecov.io/gh/Bhupendrapt5/spring5-mongo-recipeApp)
 
-#Spring5 Mongo RecipeApp
+# Spring5 Mongo RecipeApp
