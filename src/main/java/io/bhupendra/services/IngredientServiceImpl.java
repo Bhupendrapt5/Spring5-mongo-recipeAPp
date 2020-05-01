@@ -130,7 +130,7 @@ public class IngredientServiceImpl implements IngredientService {
             if (optionalIngredient.isPresent()) {
 
                 log.debug("found ingredient id "+idToDelete+" to delete");
-                optionalIngredient.get().setRecipe(null);
+//                optionalIngredient.get().setRecipe(null);
 
                 recipe.getIngredients().remove(optionalIngredient.get());
                 recipeRepository.save(recipe);

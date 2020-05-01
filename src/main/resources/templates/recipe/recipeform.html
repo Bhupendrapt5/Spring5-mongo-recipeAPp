@@ -88,7 +88,7 @@
                                 <div class="col-md-3 form-group">
                                     <label>Difficulty:</label>
                                     <select class="form-control" th:field="*{difficulty}">
-                                        <option th:each="difficultyValue : ${T(io.bhupedra.spring5recipeapp.domain.Difficulty).values()}"
+                                        <option th:each="difficultyValue : ${T(io.bhupendra.domain.Difficulty).values()}"
                                                 th:value="${difficultyValue.name()}"
                                                 th:text="${difficultyValue.name()}"
                                         >val
