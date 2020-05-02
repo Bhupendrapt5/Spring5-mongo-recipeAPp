@@ -14,6 +14,8 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 
+import java.util.UUID;
+
 @Slf4j
 @Controller
 public class IngredientController {
@@ -59,6 +61,8 @@ public class IngredientController {
         //need to return back parent id for hidden form property
         IngredientCommand ingredientCommand = new IngredientCommand();
 
+        ingredientCommand.setRecipeId(recipeId);
+//        ingredientCommand.setId(UUID.randomUUID().toString());
         model.addAttribute("ingredient", ingredientCommand);
 
         //init uom
@@ -85,12 +89,9 @@ public class IngredientController {
     @PostMapping("recipe/{recipeId}/ingredient")
     public String saveOrUpdate(@ModelAttribute IngredientCommand command){
 
-        log.debug("saving Ingredient id: " + command.getId());
-        log.debug("on receipe id:" + command.getRecipeId());
-
         IngredientCommand savedCommand = ingredientService.saveIngredientCommand(command);
 
-        log.debug("saved receipe id:" + savedCommand.getRecipeId());
+        log.debug("saved receipe id:" + command.getRecipeId());
         log.debug("saved ingredient id:" + savedCommand.getId());
 
         return "redirect:/recipe/" + command.getRecipeId() + "/ingredient/" + savedCommand.getId() + "/show";
