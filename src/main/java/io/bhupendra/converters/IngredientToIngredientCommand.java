@@ -24,7 +24,7 @@ public class IngredientToIngredientCommand implements Converter<Ingredient, Ingr
     @Nullable
     @Override
     public IngredientCommand convert(Ingredient ingredient) {
-        if (ingredient == null) {
+        if (    ingredient == null) {
             return null;
         }
 
